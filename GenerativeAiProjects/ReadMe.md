@@ -35,4 +35,31 @@ Technical Implementation: Integrated LangGraph Checkpointers and MemorySaver to 
 
 Key Innovation: Implemented metadata extraction to store user preferences (budget, location, amenities) within the persistent state, enabling "zero-reprompt" personalization for returning users.
 
+5. Automated MCQ Generator (PDF-to-Quiz)
+Concept: An educational tool that transforms static documents into interactive learning materials.
+
+Technical Implementation: Utilizes LangChain for document loading and text splitting, combined with an LLM to extract key concepts from PDFs.
+
+Key Innovation: Designed structured output prompts to ensure the AI generates consistent, valid Multiple Choice Questions (MCQs) with correct answer keys and distractors.
+
+Skills Demonstrated: PDF parsing, Data extraction, and Prompt Engineering for structured outputs.
+
+6. "New Analyst" Data Agent
+Concept: A virtual data analyst designed to assist with exploratory data analysis and insight generation.
+
+Technical Implementation: Leverages Pandas and LLMs to interpret raw datasets and generate human-readable summaries.
+
+Key Innovation: Implemented a logic flow that allows the agent to suggest relevant visualizations (using Seaborn/Matplotlib) based on the data types detected in the uploaded files.
+
+Skills Demonstrated: Exploratory Data Analysis (EDA), Data interpretation, and Python-based data science workflows.
+
+7. Formal vs. Casual Email Transformer
+Concept: A communication assistant that adjusts the "tone" of professional correspondence while preserving the original intent.
+
+Technical Implementation: Built using Few-Shot Prompting techniques to guide the LLM in recognizing the nuances between corporate formal and conversational casual styles.
+
+Key Innovation: Created a comparative state where the user can view both versions simultaneously to choose the best fit for their audience.
+
+Skills Demonstrated: NLP Style Transfer, Few-shot learning, and User-centric interface design.
+
 Skills Demonstrated: Session persistence, State checkpointing, and Contextual memory management.
