@@ -1,0 +1,31 @@
+# 📉 Financial Truth-Engine (Groq + Python Verification)
+
+A specialized AI Agent built with **LangGraph** designed to audit financial reports. It uses **Llama 3.3** to extract data and **deterministic Python logic** to verify mathematical claims, ensuring zero-tolerance for arithmetic hallucinations.
+
+## 🎯 The Problem
+Large Language Models (LLMs) are probabilistic and frequently struggle with precise calculations. In financial auditing, a "small" hallucination in a growth percentage can lead to massive misinformation. 
+
+## 🛠️ The Solution: Hybrid Verification
+This project implements a "Trust but Verify" pipeline:
+1.  **Extraction (Groq):** Uses Llama 3.3 to parse unstructured financial text into structured JSON.
+2.  **Calculation (Python):** A deterministic Python node performs the actual arithmetic (Growth %).
+3.  **Audit (Logic):** Compares the AI's claim against the Python "Ground Truth" using an absolute error threshold.
+4.  **Correction:** If a mismatch is detected, the agent automatically injects the correct value into the final report.
+
+## 🏗️ Tech Stack
+- **Orchestration:** LangGraph (State Machine)
+- **Inference Engine:** Groq (Llama 3.3 70B)
+- **Language:** Python 3.x
+- **Parsing:** LangChain Structured Output & JSON
+
+## 🚦 Features
+- **Zero-Division Safety:** Gracefully handles scenarios where previous year values are zero.
+- **Tolerance Threshold:** Allows for minor rounding differences (e.g., < 0.05%) while flagging significant errors.
+- **Auto-Correction:** Dynamically routes the state to a correction node if the audit fails.
+
+## 📊 How it Works
+The graph follows a specific state-machine flow:
+`Extractor` -> `Calculator` -> `Auditor` -> `Conditional Router` -> `(Correction)` -> `End`
+1. Clone the repo:
+   ```bash
+   git clone [https://github.com/yourusername/financial-truth-engine.git](https://github.com/yourusername/financial-truth-engine.git)
